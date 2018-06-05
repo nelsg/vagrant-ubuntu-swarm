@@ -1,0 +1,15 @@
+---
+my_hosts:
+- name: vm1
+  ip: 10.1.1.161
+  netmask: 255.255.255.0
+  memory: 2048
+  swarm_master: true
+- name: vm2
+  ip: 10.1.1.162
+  netmask: 255.255.255.0
+  memory: 2048
+- name: vm3
+  ip: 10.1.1.163
+  netmask: 255.255.255.0
+  memory: 2048

@@ -1,0 +1,4 @@
+---
+- name: Join Swarm Cluster
+  become: yes
+  shell: "docker swarm join --token `cat {{ nfs_path }}/swarm-token` {{ swarm_master_ip }}:2377"

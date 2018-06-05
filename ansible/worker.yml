@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  remote_user: vagrant
+  serial: 1
+  vars_files:
+    - nodes.yml
+  roles:
+    - base
+    - nfs-client
+    - worker

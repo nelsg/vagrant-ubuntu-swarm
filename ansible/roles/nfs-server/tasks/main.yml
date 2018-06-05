@@ -1,0 +1,32 @@
+---
+- name: Ensure NFS exports file
+  become: yes
+  template:
+    src: exports
+    dest: /etc/exports
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Ensure NFS directory
+  become: yes
+  file:
+    path: "{{ nfs_path }}"
+    state: directory
+    mode: 0755
+    owner: nobody
+    group: nogroup
+
+- name: Ensure NFS
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - nfs-kernel-server
+  tags:
+    - nfs
+
+- name: Ensure NFS table
+  become: yes
+  command: "exportfs -a"
