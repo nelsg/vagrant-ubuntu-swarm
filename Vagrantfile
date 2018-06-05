@@ -18,8 +18,6 @@ Vagrant.configure(2) do |config|
             node.vm.hostname = node_id['name']
             node.vm.provision :shell, \
                               path: "scripts/bootstrap_ansible.sh"
-            node.vm.provision :shell, \
-                              inline: "PYTHONUNBUFFERED=1 ansible-playbook --version"
             if node_id['swarm_master'].nil?
               # Default value is false
               node_id['swarm_master'] = false

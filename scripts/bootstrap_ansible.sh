@@ -30,3 +30,5 @@ echo "COMMAND: apt-cache policy ansible"
 apt-cache policy ansible
 echo "COMMAND: apt-get install -y ansible apt-transport-https"
 apt-get install -y ansible apt-transport-https
+echo "COMMAND: ansible-playbook --version"
+ansible-playbook --version
