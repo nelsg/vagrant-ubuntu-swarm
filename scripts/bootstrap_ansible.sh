@@ -32,3 +32,6 @@ echo "COMMAND: apt-get install -y ansible apt-transport-https"
 apt-get install -y ansible apt-transport-https
 echo "COMMAND: ansible-playbook --version"
 ansible-playbook --version
+echo "COMMAND: set keyboard to fr"
+sed -ie '/^XKBLAYOUT=/s/".*"/"fr"/' /etc/default/keyboard
+udevadm trigger --subsystem-match=input --action=change

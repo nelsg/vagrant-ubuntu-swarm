@@ -1,4 +1,1 @@
-{{ nfs_path }}	\
-{% for host in my_hosts %}
-				{{ host.ip }}(rw,sync,no_subtree_check,no_root_squash) {% if not loop.last %}\{% endif %}
-{% endfor %}
+{{ nfs_path }} {{ nfs_pattern }}(rw,sync,no_subtree_check,no_root_squash)
