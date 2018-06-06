@@ -4,7 +4,7 @@ my_hosts:
   ip: 10.1.1.161
   netmask: 255.255.255.0
   memory: 2048
-  swarm_master: true
+  master: true
 - name: vm2
   ip: 10.1.1.162
   netmask: 255.255.255.0
